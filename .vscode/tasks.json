@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "compile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$tsc",
+            "label": "npm: compile",
+            "detail": "tsc -p ./"
+        },
+        {
+            "type": "shell",
+            "command": "npm.cmd",
+            "args": ["run", "compile"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$tsc",
+            "label": "npm: compile (CMD)",
+            "detail": "使用 CMD 运行编译（解决 PowerShell 执行策略问题）",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/d", "/c"]
+                }
+            }
+        },
+        {
+            "type": "npm",
+            "script": "watch",
+            "group": "build",
+            "problemMatcher": "$tsc-watch",
+            "label": "npm: watch",
+            "detail": "tsc -watch -p ./",
+            "isBackground": true
+        }
+    ]
+}
+
+

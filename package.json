@@ -1,0 +1,449 @@
+{
+  "name": "codemind",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "1.1.0",
+  "publisher": "your-publisher-name",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/codemind.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/codemind/issues"
+  },
+  "homepage": "https://github.com/your-username/codemind#readme",
+  "keywords": [
+    "cursor",
+    "ai",
+    "memory",
+    "context",
+    "code-assistant",
+    "intellisense",
+    "codemind",
+    "ai-context",
+    "project-memory"
+  ],
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:memoryManager.initProject",
+    "onCommand:memoryManager.addMemory",
+    "onCommand:memoryManager.viewMemories",
+    "onCommand:memoryManager.saveSelection",
+    "onCommand:memoryManager.verifyCode",
+    "onCommand:memoryManager.refreshMemory",
+    "onCommand:memoryManager.exportMemories",
+    "onCommand:memoryManager.importMemories",
+    "onCommand:memoryManager.injectMemories",
+    "onCommand:memoryManager.getContext",
+    "onCommand:memoryManager.cleanExpiredMemories",
+    "onCommand:memoryManager.autoAdjustImportance",
+    "onCommand:memoryManager.viewStatistics",
+    "onCommand:memoryManager.test",
+    "onCommand:memoryManager.extractFromConversation",
+    "onCommand:memoryManager.checkCursorApi",
+    "onCommand:memoryManager.applyTemplate",
+    "onCommand:memoryManager.viewTemplates",
+    "onCommand:memoryManager.applyBestPractices",
+    "onCommand:memoryManager.viewBestPractices",
+    "onCommand:memoryManager.recognizePatterns",
+    "onCommand:memoryManager.createVersion",
+    "onCommand:memoryManager.viewVersions",
+    "onCommand:memoryManager.rollbackVersion",
+    "onCommand:memoryManager.createTeam",
+    "onCommand:memoryManager.exportForTeam",
+    "onCommand:memoryManager.importFromTeam",
+    "onCommand:memoryManager.syncMemories"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "localizations": [
+      {
+        "languageId": "zh-cn",
+        "translations": [
+          {
+            "id": "vscode",
+            "path": "./package.nls.zh-cn.json"
+          }
+        ],
+        "languageName": "简体中文",
+        "localizedLanguageName": "简体中文"
+      },
+      {
+        "languageId": "zh-tw",
+        "translations": [
+          {
+            "id": "vscode",
+            "path": "./package.nls.zh-tw.json"
+          }
+        ],
+        "languageName": "繁體中文",
+        "localizedLanguageName": "繁體中文"
+      },
+      {
+        "languageId": "ja",
+        "translations": [
+          {
+            "id": "vscode",
+            "path": "./package.nls.ja.json"
+          }
+        ],
+        "languageName": "日本語",
+        "localizedLanguageName": "日本語"
+      },
+      {
+        "languageId": "ko",
+        "translations": [
+          {
+            "id": "vscode",
+            "path": "./package.nls.ko.json"
+          }
+        ],
+        "languageName": "한국어",
+        "localizedLanguageName": "한국어"
+      },
+      {
+        "languageId": "ru",
+        "translations": [
+          {
+            "id": "vscode",
+            "path": "./package.nls.ru.json"
+          }
+        ],
+        "languageName": "Русский",
+        "localizedLanguageName": "Русский"
+      }
+    ],
+    "commands": [
+      {
+        "command": "memoryManager.initProject",
+        "title": "%command.initProject.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.addMemory",
+        "title": "%command.addMemory.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.viewMemories",
+        "title": "%command.viewMemories.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.saveSelection",
+        "title": "%command.saveSelection.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.verifyCode",
+        "title": "%command.verifyCode.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.refreshMemory",
+        "title": "%command.refreshMemory.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.exportMemories",
+        "title": "%command.exportMemories.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.importMemories",
+        "title": "%command.importMemories.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.viewStatistics",
+        "title": "%command.viewStatistics.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.injectMemories",
+        "title": "%command.injectMemories.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.getContext",
+        "title": "%command.getContext.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.cleanExpiredMemories",
+        "title": "%command.cleanExpiredMemories.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.autoAdjustImportance",
+        "title": "%command.autoAdjustImportance.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.test",
+        "title": "%command.test.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.extractFromConversation",
+        "title": "%command.extractFromConversation.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.checkCursorApi",
+        "title": "%command.checkCursorApi.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.applyTemplate",
+        "title": "%command.applyTemplate.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.viewTemplates",
+        "title": "%command.viewTemplates.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.applyBestPractices",
+        "title": "%command.applyBestPractices.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.viewBestPractices",
+        "title": "%command.viewBestPractices.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.recognizePatterns",
+        "title": "%command.recognizePatterns.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.createVersion",
+        "title": "%command.createVersion.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.viewVersions",
+        "title": "%command.viewVersions.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.rollbackVersion",
+        "title": "%command.rollbackVersion.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.createTeam",
+        "title": "%command.createTeam.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.exportForTeam",
+        "title": "%command.exportForTeam.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.importFromTeam",
+        "title": "%command.importFromTeam.title%",
+        "category": "%category.memoryManager%"
+      },
+      {
+        "command": "memoryManager.syncMemories",
+        "title": "%command.syncMemories.title%",
+        "category": "%category.memoryManager%"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "memoryManager.initProject"
+        },
+        {
+          "command": "memoryManager.addMemory"
+        },
+        {
+          "command": "memoryManager.viewMemories"
+        },
+        {
+          "command": "memoryManager.saveSelection"
+        },
+        {
+          "command": "memoryManager.verifyCode"
+        },
+        {
+          "command": "memoryManager.refreshMemory"
+        },
+        {
+          "command": "memoryManager.exportMemories"
+        },
+        {
+          "command": "memoryManager.importMemories"
+        },
+        {
+          "command": "memoryManager.viewStatistics"
+        },
+        {
+          "command": "memoryManager.injectMemories"
+        },
+        {
+          "command": "memoryManager.getContext"
+        },
+        {
+          "command": "memoryManager.cleanExpiredMemories"
+        },
+        {
+          "command": "memoryManager.autoAdjustImportance"
+        },
+        {
+          "command": "memoryManager.test"
+        },
+        {
+          "command": "memoryManager.extractFromConversation"
+        },
+        {
+          "command": "memoryManager.checkCursorApi"
+        },
+        {
+          "command": "memoryManager.applyTemplate"
+        },
+        {
+          "command": "memoryManager.viewTemplates"
+        },
+        {
+          "command": "memoryManager.applyBestPractices"
+        },
+        {
+          "command": "memoryManager.viewBestPractices"
+        },
+        {
+          "command": "memoryManager.recognizePatterns"
+        },
+        {
+          "command": "memoryManager.createVersion"
+        },
+        {
+          "command": "memoryManager.viewVersions"
+        },
+        {
+          "command": "memoryManager.rollbackVersion"
+        },
+        {
+          "command": "memoryManager.createTeam"
+        },
+        {
+          "command": "memoryManager.exportForTeam"
+        },
+        {
+          "command": "memoryManager.importFromTeam"
+        },
+        {
+          "command": "memoryManager.syncMemories"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "memoryManager.saveSelection",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "memoryManager.verifyCode",
+          "when": "editorTextFocus"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "%config.title%",
+      "properties": {
+        "memoryManager.autoInit": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.autoInit.description%"
+        },
+        "memoryManager.autoInject": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.autoInject.description%"
+        },
+        "memoryManager.autoExtract": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.autoExtract.description%"
+        },
+        "memoryManager.maxContextTokens": {
+          "type": "number",
+          "default": 2000,
+          "description": "%config.maxContextTokens.description%"
+        },
+        "memoryManager.maxMemories": {
+          "type": "number",
+          "default": 50,
+          "description": "%config.maxMemories.description%"
+        },
+        "memoryManager.storagePath": {
+          "type": "string",
+          "default": ".cursor-memory",
+          "description": "%config.storagePath.description%"
+        },
+        "memoryManager.autoValidate": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.autoValidate.description%"
+        },
+        "memoryManager.enableCompletion": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.enableCompletion.description%"
+        },
+        "memoryManager.importanceLevels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": ["critical", "high", "medium", "low"],
+          "description": "%config.importanceLevels.description%"
+        }
+      }
+    },
+    "views": {
+      "memoryManager": [
+        {
+          "id": "memoryManager.memoryView",
+          "name": "%view.memoryView.name%",
+          "when": "workspaceFolderCount > 0"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "memoryManager",
+          "title": "%viewsContainers.activitybar.title%",
+          "icon": "$(book)"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {}
+}
+
